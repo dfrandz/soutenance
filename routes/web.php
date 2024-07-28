@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Auth\AuthController;
 use App\Http\Controllers\Admin\LayoutController;
+use App\Http\Controllers\Client\EcoleController;
 use App\Http\Controllers\Client\FormationController;
 use App\Http\Controllers\Institue\Auth\AuthController as InstutueAuthController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,7 @@ Route::get('/', function () {
 });
 
 Route::get('/formations', [FormationController::class, 'listFormations'])->name('formations');
+Route::get('/ecoles', [EcoleController::class, 'ecoles'])->name('ecoles');
 
 
 
@@ -39,7 +41,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 });
 
 
-//ADMIN ROUTES
+//INSTITUES ROUTES
 Route::prefix('institue')->name('institue.')->group(function(){
     Route::middleware(['guest:institue'])->group(function(){
         Route::get('/login', [InstutueAuthController::class, 'login'])->name('login');
