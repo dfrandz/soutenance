@@ -17,6 +17,7 @@ return [
         'guard' => 'web',
         'passwords' => 'users',
     ],
+    
     'instutue'=>[
         'drive'=>'elequant',
         'model'=> App\Models\Institue::class

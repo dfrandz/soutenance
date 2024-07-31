@@ -32,10 +32,13 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::middleware(['guest:web'])->group(function(){
         Route::get('/login', [AuthController::class, 'login'])->name('login');
         Route::get('/register', [AuthController::class, 'register'])->name('register');
+        Route::post('/register', [AuthController::class, 'customRegistration'])->name('requestRegister');
+        Route::post('/login', [AuthController::class, 'customLogin'])->name('requestLogin');
     });
 
-    Route::middleware(['auth:web'])->group(function(){
+    Route::middleware(['auth:web','PreventBackHistory'])->group(function(){
         Route::get('/dashboard', [LayoutController::class, 'dashboard'])->name('dashboard');
+        Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     });
 
 });

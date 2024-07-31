@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class LayoutController extends Controller
+class GlobalController extends Controller
 {
     //
     public $currentUser;
@@ -18,9 +19,11 @@ class LayoutController extends Controller
         $this->currentUser = Auth::guard('web');
     }
 
-    public function dashboard(){
-        
-        // dd($this->currentUser->user());
-        return view('admin.pages.dashboard', ['admin' => $this->currentUser->user()]);
+    public function getGlobalData()
+    {
+        // Vous pouvez définir des variables globales ici
+        return [
+            'admin' => $this->currentUser->user(),
+        ];
     }
 }

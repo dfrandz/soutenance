@@ -140,8 +140,8 @@
                     <img class="rounded-circle" src="admin/img/profiles/avatar-01.jpg" width="31"
                         alt="Soeng Souy">
                     <div class="user-text">
-                        <h6>Soeng Souy</h6>
-                        <p class="text-muted mb-0">Administrator</p>
+                        <h6>{{$admin->username}}</h6>
+                        <p class="text-muted mb-0">{{$admin->email}}</p>
                     </div>
                 </span>
             </a>
@@ -158,7 +158,7 @@
                 </div>
                 <a class="dropdown-item" href="profile.html">My Profile</a>
                 <a class="dropdown-item" href="inbox.html">Inbox</a>
-                <a class="dropdown-item" href="login.html">Logout</a>
+                <a class="dropdown-item" href="{{route('admin.logout')}}">Logout</a>
             </div>
         </li>
 

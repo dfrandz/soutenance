@@ -2,24 +2,27 @@
 
 namespace App\Models;
 
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+
 use App\Traits\HasUuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
-class Institue extends Model
+class Institue extends Authenticatable
 {
-    use HasFactory;
-    use HasUuid;
-
+    use HasApiTokens, HasFactory, Notifiable , HasUuid ;
 
     /**
-     * Les attributs qui sont assignables en masse.
+     * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $fillable = [
         'name',
         'email',
+        'password',
         'address',
         'phone1',
         'phone2',
@@ -31,20 +34,22 @@ class Institue extends Model
     ];
 
     /**
-     * Les attributs qui doivent être cachés pour les tableaux.
+     * The attributes that should be hidden for serialization.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $hidden = [
+        'password',
+        'remember_token',
     ];
 
     /**
-     * Les attributs qui doivent être convertis en types natifs.
+     * The attributes that should be cast.
      *
-     * @var array
+     * @var array<string, string>
      */
     protected $casts = [
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime',
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
     ];
 }

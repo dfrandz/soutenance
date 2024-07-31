@@ -8,6 +8,7 @@
                 <li class="active">
                     <a href="#"><i class="feather-grid"></i> <span> Dashboard</span> <span></span></a>
                 </li>
+                
                 <li class="submenu">
                     <a href="#"><i class="fas fa-graduation-cap"></i> <span>Institues</span> <span
                             class="menu-arrow"></span></a>
