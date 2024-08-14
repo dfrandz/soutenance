@@ -46,10 +46,19 @@ class AuthController extends Controller
     {
         // $data = $request->validated();
         $data = $request->validated();
-        $this->isconnect = $this->authService->logniUser($data);
-        if($this->isconnect){
-            return response()->json(['success'=>true, 'message'=>"administrateur crée reussie"], 200);
+        try {
+            $this->isconnect = $this->authService->logniUser($data);
+            if($this->isconnect){
+                return response()->json(['success'=>true, 'message'=>"Connection reussie"], 200);
+            }
+            return response()->json(['success'=>false, 'error'=>"erreur de credential"]);
+        } catch (\Throwable $th) {
+            return response()->json(['success'=>false, 'error'=>"erreur serveur"]);
         }
+        
+        // if($this->isconnect){
+        //     return response()->json(['success'=>true, 'message'=>"administrateur crée reussie"], 200);
+        // }
         
     }
 

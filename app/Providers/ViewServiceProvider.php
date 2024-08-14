@@ -8,6 +8,7 @@ use Illuminate\Support\ServiceProvider;
 
 class ViewServiceProvider extends ServiceProvider
 {
+
     /**
      * Register services.
      */
@@ -25,8 +26,8 @@ class ViewServiceProvider extends ServiceProvider
         //
         $globalController = new GlobalController();
         $globalData = $globalController->getGlobalData();
-
+        // dd($globalData);
         // Partager les données avec toutes les vues
-        View::share('globalData', $globalData);
+        View::share('admin', $globalData);
     }
 }

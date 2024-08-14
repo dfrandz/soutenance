@@ -43,6 +43,7 @@
 
     @stack('script-login')
     @stack('admin-register-script')
+    
 </body>
 
 </html>

@@ -90,6 +90,9 @@
                         },
                         success: function(data) {
                             console.log('response:', data)
+                            // Réinitialiser le bouton de soumission
+                            submitButton.prop('disabled', false);
+                            submitButton.html(originalText);
                             if (!data.success) {
                                 toastr.error(data.error);
                             }else {
@@ -98,20 +101,18 @@
                                 window.location.href = "/admin/dashboard"
                                 toastr.success(data.message);
                             }
-                            // Réinitialiser le bouton de soumission
-                        submitButton.prop('disabled', false);
-                        submitButton.html(originalText);
+                        
                         },
                         error: function(xhr, status, error) {
+                            // Réinitialiser le bouton de soumission
+                            submitButton.prop('disabled', false);
+                            submitButton.html(originalText);
                             toastr.error(error);
                             $.each(xhr.responseJSON.errors, function(prefix, val) {
                                     toastr.error(val[0]);
                             });
-                            // Réinitialiser le bouton de soumission
-                        submitButton.prop('disabled', false);
-                        submitButton.html(originalText);
+                         
                         }
-
                     }, 'json');
             })
         })

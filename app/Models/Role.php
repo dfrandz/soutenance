@@ -10,7 +10,9 @@ class Role extends Model
 {
     // use HasFactory;
     use HasUuid;
-
+    
+    protected $keyType = 'string';
+    public $incrementing = false;
 
     /**
      * Les attributs qui sont assignables en masse.

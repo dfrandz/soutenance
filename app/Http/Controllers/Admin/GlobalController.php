@@ -21,6 +21,7 @@ class GlobalController extends Controller
 
     public function getGlobalData()
     {
+        
         // Vous pouvez définir des variables globales ici
         return [
             'admin' => $this->currentUser->user(),

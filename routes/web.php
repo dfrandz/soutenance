@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Auth\AuthController;
 use App\Http\Controllers\Admin\LayoutController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Client\EcoleController;
 use App\Http\Controllers\Client\FormationController;
 use App\Http\Controllers\Institue\Auth\AuthController as InstutueAuthController;
@@ -39,6 +40,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::middleware(['auth:web','PreventBackHistory'])->group(function(){
         Route::get('/dashboard', [LayoutController::class, 'dashboard'])->name('dashboard');
         Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+        Route::get('/roles',[RoleController::class, 'index'])->name('roles');
+        Route::post('/roles', [RoleController::class, 'storeRole'])->name('storeRole');
     });
 
 });
@@ -52,6 +55,7 @@ Route::prefix('institue')->name('institue.')->group(function(){
 
     Route::middleware(['auth:institue'])->group(function(){
         Route::get('/dashboard', [LayoutController::class, 'dashboard'])->name('dashboard');
+        
     });
 
 });

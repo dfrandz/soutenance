@@ -21,8 +21,6 @@ class AuthService{
     }
 
     public function logniUser($data): bool{
-        // dd($data->only(['email', 'password']));
-        // login logic here
         $result = Auth::guard('web')->attempt($data);
         return $result;
     }

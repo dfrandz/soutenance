@@ -19,8 +19,8 @@ class LayoutController extends Controller
     }
 
     public function dashboard(){
-        
-        // dd($this->currentUser->user());
         return view('admin.pages.dashboard', ['admin' => $this->currentUser->user()]);
     }
+
+   
 }

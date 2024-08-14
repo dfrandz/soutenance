@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="{{asset("admin/plugins/icons/flags/flags.css")}}">
     <link rel="stylesheet" href="{{asset("admin/plugins/fontawesome/css/fontawesome.min.css")}}">
     <link rel="stylesheet" href="{{asset("admin/plugins/fontawesome/css/all.min.css")}}">
+    <link rel="stylesheet" href=" {{asset('admin/sweetalerte2/sweetalert2.min.css')}}">
+    <link rel="stylesheet" href=" {{asset('admin/toastr/toastr.min.css')}}">
     <link rel="stylesheet" href="{{asset("admin/css/style.css")}}">
+    <script src="{{asset("admin/js/jquery-3.6.0.min.js")}}"></script>
 </head>
 
 <body>
@@ -44,10 +47,14 @@
     <script src="{{asset("admin/js/jquery-3.6.0.min.js")}}"></script>
     <script src="{{asset("admin/plugins/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
     <script src="{{asset("admin/js/feather.min.js")}}"></script>
+    <script src="{{asset('admin/sweetalerte2/sweetalert2.min.js')}} "></script>
+    <script src="{{asset('admin/toastr/toastr.min.js')}} "></script>
     <script src="{{asset("admin/plugins/slimscroll/jquery.slimscroll.min.js")}}"></script>
     <script src="{{asset("admin/plugins/apexchart/apexcharts.min.js")}}"></script>
     <script src="{{asset("admin/plugins/apexchart/chart-data.js")}}"></script>
     <script src="{{asset("admin/js/script.js")}}"></script>
+
+    @stack('script-role')
 
 </body>
 

@@ -58,6 +58,14 @@
                         <li><a href="invoice-grid.html">Add</a></li>
                     </ul>
                 </li>
+                <li class="submenu">
+                    <a href="#"><i class="fas fa-clipboard"></i> <span>Roles</span> <span
+                            class="menu-arrow"></span></a>
+                    <ul>
+                        <li><a href="{{route('admin.roles')}}">List</a></li>
+                        <li><a href="invoice-grid.html">Add</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
